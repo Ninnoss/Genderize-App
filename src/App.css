@@ -17,10 +17,17 @@ form,
   background-color: #e0f2f1;
 }
 
-/* button[type='submit']:focus {
+button[type='submit']:focus {
   box-shadow: none;
-} */
+}
 
 .result-box {
   background-color: #ffedd5;
+}
+
+.suggestion:hover {
+  background-color: #c3e9e7;
+  padding: .3rem;
+  border-radius: 5px;
+  cursor: pointer;
 }

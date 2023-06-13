@@ -7,14 +7,31 @@
   color: #2dd4bf !important;
 }
 
-#user {
+.user-dark {
+  background-color: #0da38f;
+}
+
+.user-light {
   background-color: #c3e9e7;
 }
 
 /* Hero Section */
-form,
-#nameSearch {
-  background-color: #e0f2f1;
+
+.name-search-dark {
+  background-color: #0da38f;
+  color: white;
+}
+
+.name-search-light {
+  background-color: #c3e9e7;
+}
+
+.name-search-light::placeholder {
+  color: #000; /* Set the color for the light mode */
+}
+
+.name-search-dark::placeholder {
+  color: #fff; /* Set the color for the dark mode */
 }
 
 button[type='submit']:focus {
@@ -25,9 +42,25 @@ button[type='submit']:focus {
   background-color: #ffedd5;
 }
 
-.suggestion:hover {
-  background-color: #c3e9e7;
-  padding: .3rem;
+.suggestion-light:hover {
+  background-color: #8ca4a3;
+  padding: 0.3rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.suggestion-dark:hover {
+  background-color: #5b7d7c;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.light {
+  color: #000;
 }

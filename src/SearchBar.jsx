@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { BiSearch } from 'react-icons/bi';
 import { useEffect, useState } from 'react';
+import { useTheme } from './ThemeContext';
 
 const SearchBar = ({ onSubmit }) => {
+  const { darkMode } = useTheme();
+
   const [search, setSearch] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
@@ -35,12 +38,10 @@ const SearchBar = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="d-flex rounded-3 align-items-start ">
+      className={`d-flex rounded-3 align-items-start ${darkMode ? 'name-search-dark' : 'name-search-light'}`}>
       <div className="d-flex flex-column w-100">
         <input
-          list="nameSuggestions"
-          id="nameSearch"
-          className="rounded-3 px-3 py-2 w-100 border-0"
+          className={`rounded-3 px-3 py-2 w-100 border-0  ${darkMode ? 'name-search-dark' : 'name-search-light'}`}
           placeholder="Enter your name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -58,7 +59,7 @@ const SearchBar = ({ onSubmit }) => {
               })
               .map((suggestion, index) => (
                 <p
-                  className="suggestion"
+                  className={`${darkMode ? 'suggestion-dark' : 'suggestion-light'}`}
                   onClick={(e) => handleSuggestionClick(e, suggestion)}
                   key={index}>
                   {suggestion}
@@ -70,7 +71,10 @@ const SearchBar = ({ onSubmit }) => {
       <button
         type="submit"
         className="d-flex justify-content-end align-items-center btn">
-        <BiSearch size={'1.5rem'} />
+        <BiSearch
+          size={'1.5rem'}
+          color={`${darkMode ? '#fff' : '#000'}`}
+        />
       </button>
     </form>
   );

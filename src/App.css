@@ -17,9 +17,9 @@ form,
   background-color: #e0f2f1;
 }
 
-button[type='submit']:focus {
+/* button[type='submit']:focus {
   box-shadow: none;
-}
+} */
 
 .result-box {
   background-color: #ffedd5;

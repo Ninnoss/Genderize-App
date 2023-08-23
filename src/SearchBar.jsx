@@ -14,7 +14,7 @@ const SearchBar = ({ onSubmit }) => {
   }, []);
 
   function fetchSuggestions() {
-    fetch('https://randomuser.me/api/?results=500')
+    fetch('https://randomuser.me/api/?results=2000')
       .then((res) => res.json())
       .then((data) => {
         const nameSuggestions = data.results.map((item) => item.name.first);

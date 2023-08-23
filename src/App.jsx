@@ -8,9 +8,11 @@ export default function App() {
   const theme = darkMode ? 'dark' : 'light';
   // console.log(theme);
   return (
-    <main className={`${theme} pb-5`}>
-      <Navbar />
-      <Hero />
-    </main>
+    <>
+      <main style={{height: '100vh'}} className={`${theme} pb-5`}>
+        <Navbar />
+        <Hero />
+      </main>
+    </>
   );
 }
